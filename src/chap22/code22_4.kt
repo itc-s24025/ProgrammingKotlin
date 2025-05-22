@@ -1,8 +1,5 @@
 package chap22
 
-import chap21.printTimes
-import java.awt.SystemColor.text
-
 fun main() {
     val week = arrayOf("日曜日", "月曜日", "火曜日", "水曜日", "木曜日" ,"金曜日","土曜日")
     println("0~6 の数字を入力してください")
