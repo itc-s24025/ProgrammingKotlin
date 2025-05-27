@@ -30,8 +30,8 @@ fun main() {
         5 to "5円",
         1 to "1円",
     )
-    for ((key, value) in calculation) {
-        randAmount / amount
+    for (key in calculation) {
+        println()
 
     }
 }
