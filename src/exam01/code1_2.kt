@@ -14,20 +14,26 @@ fun main() {
     print("子供の人数: ")
     val child = readln().toInt()
 
-    val seniorAmount = senior * 1300
-    val adultAmount = adult * 2000
-    val childAmount = child * 1000
+    val seniorPrice = 1300
+    val adultPrice = 2000
+    val childPrice = 1000
+
+    var seniorTotalPrice = senior * seniorPrice
+    var adultTotalPrice = adult * adultPrice
+    var childTotalPrice = child * childPrice
 
     if (senior >= 10) {
-        println(seniorAmount - 200)
-    } else if (adult >= 10) {
-        println(adultAmount - 200)
-    }else if (child >= 10) {
-        println(childAmount - 200)
+        seniorTotalPrice -= senior * 200
+    }
+    if (adult >= 10) {
+        adultTotalPrice -= adult * 200
+        }
+    if (child >= 10) {
+        childTotalPrice -= child * 200
     }
 
-    println(seniorAmount)
-    println(adultAmount)
-    println(childAmount)
-
+    val totalAmount = seniorTotalPrice + adultTotalPrice + childTotalPrice
+    println("合計金額: ${totalAmount}円")
 }
+
+

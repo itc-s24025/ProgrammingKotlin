@@ -1,5 +1,6 @@
 package exam01
 
+import java.time.chrono.JapaneseEra.values
 import kotlin.random.Random
 
 /*
@@ -13,11 +14,12 @@ import kotlin.random.Random
 
 fun main() {
     val randAmount = Random.nextInt(100, 9000)
+    println("購入金額: ￥${randAmount}")
 
-    print("支払う金額を入力してください: ")
+    print("いくら出す？: ￥")
     val amount = readln().toInt()
 
-    val changeAmount = randAmount - amount
+    var changeAmount = amount - randAmount
 
     val calculation = mapOf(
         10000 to "100,000円",
@@ -30,8 +32,9 @@ fun main() {
         5 to "5円",
         1 to "1円",
     )
-    for (key in calculation) {
-        println()
-
+    for ((key, value) in calculation) {
+        val cash = changeAmount / key
+        changeAmount -= cash * key
+        println("$value = $cash")
     }
 }
